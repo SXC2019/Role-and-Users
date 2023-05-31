@@ -1,0 +1,23 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model IEnumerable<IdentityRole>
+<div class="container" style="margin-top:20px;">
+    @if (Model.Any())
+    {
+        foreach (var role in Model)
+        {
+            
+            <div class="card">
+                <div class="card-header">
+                    <strong>Role Name</strong>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">@role.Name</h5>
+                    
+                    <a asp-controller="Administrator" asp-action="AddOrRemoveUsers" asp-route-roleId="@role.Id" class="btn btn-primary">Edit Users</a>
+                </div>
+            </div>
+            <br/>
+        }
+
+    }
+</div>

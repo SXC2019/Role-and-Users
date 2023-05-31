@@ -1,0 +1,19 @@
+﻿@model RoleModel
+<div class="container">
+
+    <form class="form-horizontal" asp-controller="Administrator" asp-action="CreateRole" method="post">
+        <div asp-validation-summary="All"></div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="email">Role Name:</label>
+            <div class="col-sm-10">
+                <input asp-for="RoleName" class="form-control" placeholder="Enter Role Name">
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>

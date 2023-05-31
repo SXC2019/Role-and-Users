@@ -1,0 +1,24 @@
+﻿@model List<EditUserModel>
+<form method="post" asp-controller="Administrator" asp-action="EditUsers">
+    <div class="container" style="margin-top:10px;">
+        <div class="card">
+            <div class="card-header">
+                <input value="@ViewBag.RoleId" name="roleId" type="hidden" />
+                <strong>@ViewBag.RoleName</strong>
+            </div>
+            @for (int i=0;i<Model.Count;i++)
+            {
+                <div class="form-check">
+                    <input class="form-check-input" asp-for="@Model[i].IsSelected" id="flexCheckDefault" />
+                    <label class="form-check-label">@Model[i].UserName</label>
+                    <input type="hidden" asp-for="@Model[i].UserName" />
+                </div>
+            }
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Update Users</button>
+                <a class="btn btn-secondary" asp-controller="Administrator" asp-action="ManageRole">Cancel</a>
+            </div>
+
+        </div>
+    </div>
+</form>
